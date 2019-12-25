@@ -90,7 +90,6 @@ public class MainActivity extends Activity {
             hBitmap = new Paint(4);
         }
 
-        /* Access modifiers changed, original: protected */
         public void onSizeChanged(int w, int h, int oldw, int oldh) {
             super.onSizeChanged(w, h, oldw, oldh);
             mBitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);
@@ -98,12 +97,11 @@ public class MainActivity extends Activity {
             mCanvas = new Canvas(mBitmap);
         }
 
-        /* Access modifiers changed, original: protected */
         public void onDraw(Canvas canvas) {
             super.onDraw(canvas);
             canvas.drawColor(-1);
             canvas.drawBitmap(mBitmap, 0.0f, 0.0f, mBitmapPaint);
-            mBitmapPaint.setColor(-65536);
+            mBitmapPaint.setColor(Color.WHITE);
             picker2 = BitmapFactory.decodeResource(getResources(), R.drawable.pick);
             Bitmap pic = Bitmap.createScaledBitmap(picker2, disp.getWidth(), disp.getHeight() / 9, true);
             mBitmapPaint.setColor(Color.rgb(r, g, b));
@@ -240,8 +238,7 @@ public class MainActivity extends Activity {
             return true;
         }
     }
-
-    /* Access modifiers changed, original: protected */
+    
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(1);
